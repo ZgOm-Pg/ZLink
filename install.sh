@@ -33,6 +33,17 @@ else
     echo -e "${red}未检测到系统版本，请联系脚本作者！${plain}\n" && exit 1
 fi
 
+# 系统白名单：ZLink 仅支持 Debian / Ubuntu / Alpine
+case x"${release}" in
+    xdebian|xubuntu|xalpine)
+        echo -e "检测到系统: ${green}${release}${plain}"
+        ;;
+    *)
+        echo -e "${red}不支持当前系统: ${release}${plain}"
+        echo -e "${red}ZLink 一键安装仅支持 Debian / Ubuntu / Alpine，其他系统请参考 README 手动部署${plain}\n" && exit 1
+        ;;
+esac
+
 arch=$(uname -m)
 
 if [[ $arch == "x86_64" || $arch == "x64" || $arch == "amd64" ]]; then
