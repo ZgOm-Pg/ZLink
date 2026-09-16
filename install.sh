@@ -50,11 +50,17 @@ if [[ $arch == "x86_64" || $arch == "x64" || $arch == "amd64" ]]; then
     arch="64"
 elif [[ $arch == "aarch64" || $arch == "arm64" ]]; then
     arch="arm64-v8a"
+elif [[ $arch == "armv7l" || $arch == "armv7" || $arch == "armhf" ]]; then
+    arch="arm32-v7a"
+elif [[ $arch == "armv6l" || $arch == "armv6" ]]; then
+    arch="arm32-v6"
+elif [[ $arch == "armv5tel" || $arch == "armv5tejl" || $arch == "armv5" ]]; then
+    arch="arm32-v5"
 elif [[ $arch == "s390x" ]]; then
     arch="s390x"
 else
-    arch="64"
-    echo -e "${red}检测架构失败，使用默认架构: ${arch}${plain}"
+    echo -e "${red}不支持的架构: ${arch}${plain}"
+    echo -e "${red}支持的架构: x86_64 / arm64 / armv7 / armv6 / armv5 / s390x${plain}\n" && exit 1
 fi
 
 echo "架构: ${arch}"
