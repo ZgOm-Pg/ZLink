@@ -1,89 +1,141 @@
-# V2bX
+# ZLink
 
-[![](https://img.shields.io/badge/TgChat-UnOfficialV2Board%E4%BA%A4%E6%B5%81%E7%BE%A4-green)](https://t.me/unofficialV2board)
-[![](https://img.shields.io/badge/TgChat-YuzukiProjects%E4%BA%A4%E6%B5%81%E7%BE%A4-blue)](https://t.me/YuzukiProjects)
+**ZLink** 是一个基于多内核的代理面板节点端程序，二次开发自 [V2bX](https://github.com/wyx2685/V2bX)（V2bX 修改自 XrayR）。
 
-A V2board node server based on multi core, modified from XrayR.  
-一个基于多种内核的V2board节点服务端，修改自XrayR，支持V2ay,Trojan,Shadowsocks协议。
+对接 Xboard / 修改版 V2Board（NewV2board 协议），支持 **Vmess / VLESS / Trojan / Shadowsocks / Hysteria2** 多协议，支持 **Xray / sing-box / Hysteria2** 多内核。
 
-**注意： 本项目需要搭配[修改版V2board](https://github.com/wyx2685/v2board)**
+## 特性
 
-## 特点
+- 永久开源免费（MPL 2.0）
+- 支持 Vmess / VLESS（XTLS / REALITY / Vision）/ Trojan / Shadowsocks / Hysteria1/2
+- 支持单实例对接多节点，无需重复启动
+- 支持在线设备数上报与**跨节点设备数限制**（依赖面板 UniProxy `alive` / `alivelist` 接口）
+- 支持在线 IP 数限制、TCP 连接数限制
+- 支持节点端口级别、用户级别限速、动态限速
+- 自动申请与续签 TLS 证书（ACME）
+- 支持审计规则、自定义 DNS
+- 修改配置自动重启实例
+- 多内核架构，可通过 build tags 按需编译
 
-* 永久开源且免费。
-* 支持Vmess/Vless, Trojan， Shadowsocks, Hysteria1/2多种协议。
-* 支持Vless和XTLS等新特性。
-* 支持单实例对接多节点，无需重复启动。
-* 支持限制在线IP。
-* 支持限制Tcp连接数。
-* 支持节点端口级别、用户级别限速。
-* 配置简单明了。
-* 修改配置自动重启实例。
-* 支持多种内核，易扩展。
-* 支持条件编译，可仅编译需要的内核。
+## 一键安装
 
-## 功能介绍
-
-| 功能        | v2ray | trojan | shadowsocks | hysteria1/2 |
-|-----------|-------|--------|-------------|----------|
-| 自动申请tls证书 | √     | √      | √           | √        |
-| 自动续签tls证书 | √     | √      | √           | √        |
-| 在线人数统计    | √     | √      | √           | √        |
-| 审计规则      | √     | √      | √           | √         |
-| 自定义DNS    | √     | √      | √           | √        |
-| 在线IP数限制   | √     | √      | √           | √        |
-| 连接数限制     | √     | √      | √           | √         |
-| 跨节点IP数限制  |√      |√       |√            |√          |
-| 按照用户限速    | √     | √      | √           | √         |
-| 动态限速(未测试) | √     | √      | √           | √         |
-
-## TODO
-
-- [ ] 重新实现动态限速
-- [ ] 完善使用文档
-
-## 软件安装
-
-### 一键安装
-
-```
-wget -N https://raw.githubusercontent.com/wyx2685/V2bX-script/master/install.sh && bash install.sh
+```bash
+wget -N https://raw.githubusercontent.com/JackHONGhy/ZLink/main/install.sh && bash install.sh
 ```
 
-### 手动安装
+支持的系统：Debian / Ubuntu / CentOS / Rocky / AlmaLinux / Alpine / Fedora 等。
 
-[手动安装教程](https://v2bx.v-50.me/v2bx/v2bx-xia-zai-he-an-zhuang/install/manual)
+## 快速开始
 
-## 构建
-``` bash
-# 通过-tags选项指定要编译的内核， 可选 xray， sing, hysteria2
-GOEXPERIMENT=jsonv2 go build -v -o build_assets/V2bX -tags "sing xray hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor" -trimpath -ldflags "-X 'github.com/InazumaV/V2bX/cmd.version=$version' -s -w -buildid="
+安装完成后编辑配置文件：
+
+```bash
+nano /etc/ZLink/config.json
 ```
 
-## 配置文件及详细使用教程
+### 对接 Xboard / V2Board 节点示例（VLESS + REALITY）
 
-[详细使用教程](https://v2bx.v-50.me/)
+```json
+{
+  "Log": {
+    "Level": "info"
+  },
+  "Cores": [
+    {
+      "Type": "xray",
+      "Log": {
+        "Level": "warning"
+      }
+    }
+  ],
+  "Nodes": [
+    {
+      "Core": "xray",
+      "ApiHost": "https://你的面板域名",
+      "ApiKey": "节点通信密钥",
+      "NodeID": 47,
+      "NodeType": "vless",
+      "Timeout": 30,
+      "ListenIP": "0.0.0.0",
+      "SendIP": "0.0.0.0",
+      "DeviceOnlineMinTraffic": 200,
+      "CertConfig": {
+        "CertMode": "none",
+        "RejectUnknownSni": false
+      }
+    }
+  ]
+}
+```
+
+保存后重启服务：
+
+```bash
+ZLink restart
+```
+
+> 单实例可配置多个 `Nodes`，同时对接多个节点，无需启动多个进程。
+
+## 常用命令
+
+```bash
+ZLink start        # 启动
+ZLink stop         # 停止
+ZLink restart      # 重启
+ZLink log          # 查看日志
+ZLink update       # 更新到最新版
+ZLink uninstall    # 卸载
+```
+
+或使用 systemd：
+
+```bash
+systemctl start/stop/restart ZLink
+journalctl -u ZLink -f
+```
+
+## 从 XrayR 迁移
+
+XrayR 已停止维护，ZLink（V2bX 系）是其继任者，且补齐了在线设备数上报（`POST /alive`）与跨节点设备限制（`GET /alivelist`）：
+
+| XrayR 配置 | ZLink 对应 |
+|---|---|
+| `ApiHost` / `ApiKey` / `NodeID` / `NodeType` | 原样照抄 |
+| `VlessFlow: xtls-rprx-vision` | 节点参数由面板下发，无需本地配置 |
+| `DeviceLimit: 0`（本地） | 不再需要，设备限制由面板下发自动生效 |
+| `GlobalDeviceLimitConfig` | 不再需要，跨节点限制由面板聚合 |
+
+迁移步骤：
+
+1. 安装 ZLink：`wget -N https://raw.githubusercontent.com/JackHONGhy/ZLink/main/install.sh && bash install.sh`
+2. 按上表填写 `/etc/ZLink/config.json`
+3. `ZLink restart` 并确认面板节点在线
+4. 确认无误后停用 XrayR：`systemctl disable --now XrayR`
+
+## 从 V2bX 迁移
+
+ZLink 保持 V2bX 配置格式兼容：备份 `/etc/V2bX/config.json`，安装 ZLink 后将配置放入 `/etc/ZLink/config.json` 即可，无需其他修改。
+
+## 构建说明
+
+需要 Go 1.25+：
+
+```bash
+GOEXPERIMENT=jsonv2 go build -v -o ZLink -tags "sing xray hysteria2 with_quic with_grpc with_utls with_wireguard with_acme with_gvisor" -trimpath -ldflags "-s -w -buildid="
+```
+
+通过 `-tags` 选择要编译的内核：`xray` / `sing` / `hysteria2`。
 
 ## 免责声明
 
-* 此项目用于本人自用，因此本人不能保证向后兼容性。
-* 由于本人能力有限，不能保证所有功能的可用性，如果出现问题请在Issues反馈。
-* 本人不对任何人使用本项目造成的任何后果承担责任。
-* 本人比较多变，因此本项目可能会随想法或思路的变动随性更改项目结构或大规模重构代码，若不能接受请勿使用。
+- 本项目基于 V2bX（MPL 2.0）二次开发，遵循原许可证
+- 仅用于学习研究和合法授权的网络运维场景，使用者需遵守所在地区法律法规
+- 使用本项目造成的任何后果由使用者自行承担
 
-## 赞助
+## 致谢
 
-[赞助链接](https://v-50.me/)
-
-## Thanks
-
-* [Project X](https://github.com/XTLS/)
-* [V2Fly](https://github.com/v2fly)
-* [VNet-V2ray](https://github.com/ProxyPanel/VNet-V2ray)
-* [Air-Universe](https://github.com/crossfw/Air-Universe)
-* [XrayR](https://github.com/XrayR/XrayR)
-* [sing-box](https://github.com/SagerNet/sing-box)
-
-## Stars 增长记录
-
-[![Stargazers over time](https://starchart.cc/wyx2685/V2bX.svg)](https://starchart.cc/wyx2685/V2bX)
+- [wyx2685/V2bX](https://github.com/wyx2685/V2bX)
+- [XrayR-project/XrayR](https://github.com/XrayR-project/XrayR)
+- [XTLS/Xray-core](https://github.com/XTLS/Xray-core)
+- [SagerNet/sing-box](https://github.com/SagerNet/sing-box)
+- [apernet/hysteria](https://github.com/apernet/hysteria)

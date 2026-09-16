@@ -4,7 +4,7 @@ import (
 	"log"
 	"testing"
 
-	"github.com/InazumaV/V2bX/conf"
+	"github.com/JackHONGhy/ZLink/conf"
 )
 
 var client *Client

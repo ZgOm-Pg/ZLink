@@ -4,11 +4,11 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/InazumaV/V2bX/api/panel"
-	"github.com/InazumaV/V2bX/common/counter"
-	"github.com/InazumaV/V2bX/common/format"
-	vCore "github.com/InazumaV/V2bX/core"
-	"github.com/InazumaV/V2bX/core/xray/app/dispatcher"
+	"github.com/JackHONGhy/ZLink/api/panel"
+	"github.com/JackHONGhy/ZLink/common/counter"
+	"github.com/JackHONGhy/ZLink/common/format"
+	vCore "github.com/JackHONGhy/ZLink/core"
+	"github.com/JackHONGhy/ZLink/core/xray/app/dispatcher"
 	"github.com/xtls/xray-core/common/protocol"
 	"github.com/xtls/xray-core/proxy"
 )

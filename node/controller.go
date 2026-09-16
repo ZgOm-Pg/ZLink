@@ -4,11 +4,11 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/InazumaV/V2bX/api/panel"
-	"github.com/InazumaV/V2bX/common/task"
-	"github.com/InazumaV/V2bX/conf"
-	vCore "github.com/InazumaV/V2bX/core"
-	"github.com/InazumaV/V2bX/limiter"
+	"github.com/JackHONGhy/ZLink/api/panel"
+	"github.com/JackHONGhy/ZLink/common/task"
+	"github.com/JackHONGhy/ZLink/conf"
+	vCore "github.com/JackHONGhy/ZLink/core"
+	"github.com/JackHONGhy/ZLink/limiter"
 	log "github.com/sirupsen/logrus"
 )
 

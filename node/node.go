@@ -3,9 +3,9 @@ package node
 import (
 	"fmt"
 
-	"github.com/InazumaV/V2bX/api/panel"
-	"github.com/InazumaV/V2bX/conf"
-	vCore "github.com/InazumaV/V2bX/core"
+	"github.com/JackHONGhy/ZLink/api/panel"
+	"github.com/JackHONGhy/ZLink/conf"
+	vCore "github.com/JackHONGhy/ZLink/core"
 )
 
 type Node struct {

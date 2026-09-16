@@ -1,6 +1,6 @@
 ---
 name: "Bug 反馈"
-about: 创建一个报告以帮助我们修复并改进V2bX
+about: 创建一个报告以帮助我们修复并改进ZLink
 title: ''
 labels: 
 assignees: ''
