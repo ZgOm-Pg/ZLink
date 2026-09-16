@@ -303,6 +303,42 @@ EOF
     fi
 }
 
+# 安装后自动检测：系统/架构/版本/服务状态/启动日志错误扫描
+post_install_check() {
+    echo -e ""
+    echo -e "${green}========== ZLink 自动检测结果 ==========${plain}"
+    echo -e "操作系统: ${release}    架构: ${arch}    版本: ${last_version}"
+    if [[ ! -f /etc/ZLink/config.json ]]; then
+        echo -e "配置文件: ${yellow}未配置${plain} (/etc/ZLink/config.json 不存在)"
+        echo -e "下一步: 运行 ${green}ZLink generate${plain} 生成配置，或手动编辑后 ${green}ZLink restart${plain}"
+        echo -e "${green}========================================${plain}"
+        return
+    fi
+    echo -e "配置文件: ${green}已存在${plain}"
+    if [[ x"${release}" == x"alpine" ]]; then
+        service ZLink status >/dev/null 2>&1 && ST=active || ST=inactive
+    else
+        ST=$(systemctl is-active ZLink 2>/dev/null)
+    fi
+    if [[ x"$ST" == x"active" ]]; then
+        echo -e "服务状态: ${green}运行中${plain}"
+        if command -v journalctl >/dev/null 2>&1; then
+            sleep 3
+            ERR=$(journalctl -u ZLink --no-pager -n 60 --output=cat 2>/dev/null | grep -cE "level=(error|panic|fatal)")
+            if [[ ${ERR} -eq 0 ]]; then
+                echo -e "启动检查: ${green}最近日志无错误${plain}"
+            else
+                echo -e "启动检查: ${yellow}发现 ${ERR} 条错误日志，执行 ZLink log 查看详情${plain}"
+            fi
+        fi
+        echo -e "下一步: 无需操作，节点已开始对接面板并上报数据"
+    else
+        echo -e "服务状态: ${red}未运行${plain}，执行 ${green}ZLink log${plain} 查看原因"
+    fi
+    echo -e "${green}========================================${plain}"
+}
+
 echo -e "${green}开始安装${plain}"
 install_base
 install_ZLink $1
+post_install_check
