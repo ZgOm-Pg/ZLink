@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/JackHONGhy/ZLink/conf"
+	"github.com/ZgOm-Pg/ZLink/conf"
 )
 
 var l *Lego

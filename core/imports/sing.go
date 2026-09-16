@@ -2,4 +2,4 @@
 
 package imports
 
-import _ "github.com/JackHONGhy/ZLink/core/sing"
+import _ "github.com/ZgOm-Pg/ZLink/core/sing"

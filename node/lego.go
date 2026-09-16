@@ -20,8 +20,8 @@ import (
 	"github.com/go-acme/lego/v4/providers/dns"
 	"github.com/go-acme/lego/v4/registration"
 
-	"github.com/JackHONGhy/ZLink/common/file"
-	"github.com/JackHONGhy/ZLink/conf"
+	"github.com/ZgOm-Pg/ZLink/common/file"
+	"github.com/ZgOm-Pg/ZLink/conf"
 	"github.com/go-acme/lego/v4/certcrypto"
 	"github.com/go-acme/lego/v4/lego"
 )

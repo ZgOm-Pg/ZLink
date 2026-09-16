@@ -9,7 +9,7 @@ import (
 
 	"encoding/json"
 
-	"github.com/JackHONGhy/ZLink/api/panel"
+	"github.com/ZgOm-Pg/ZLink/api/panel"
 	log "github.com/sirupsen/logrus"
 	coreConf "github.com/xtls/xray-core/infra/conf"
 )

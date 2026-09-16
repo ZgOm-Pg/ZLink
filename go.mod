@@ -1,4 +1,4 @@
-module github.com/JackHONGhy/ZLink
+module github.com/ZgOm-Pg/ZLink
 
 go 1.25
 

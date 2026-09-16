@@ -5,7 +5,7 @@ import (
 
 	"encoding/json"
 
-	conf2 "github.com/JackHONGhy/ZLink/conf"
+	conf2 "github.com/ZgOm-Pg/ZLink/conf"
 	"github.com/xtls/xray-core/core"
 	"github.com/xtls/xray-core/infra/conf"
 )

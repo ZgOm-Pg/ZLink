@@ -4,11 +4,11 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/JackHONGhy/ZLink/api/panel"
-	"github.com/JackHONGhy/ZLink/common/counter"
-	"github.com/JackHONGhy/ZLink/common/format"
-	vCore "github.com/JackHONGhy/ZLink/core"
-	"github.com/JackHONGhy/ZLink/core/xray/app/dispatcher"
+	"github.com/ZgOm-Pg/ZLink/api/panel"
+	"github.com/ZgOm-Pg/ZLink/common/counter"
+	"github.com/ZgOm-Pg/ZLink/common/format"
+	vCore "github.com/ZgOm-Pg/ZLink/core"
+	"github.com/ZgOm-Pg/ZLink/core/xray/app/dispatcher"
 	"github.com/xtls/xray-core/common/protocol"
 	"github.com/xtls/xray-core/proxy"
 )

@@ -6,10 +6,10 @@ import (
 	"runtime"
 	"syscall"
 
-	"github.com/JackHONGhy/ZLink/conf"
-	vCore "github.com/JackHONGhy/ZLink/core"
-	"github.com/JackHONGhy/ZLink/limiter"
-	"github.com/JackHONGhy/ZLink/node"
+	"github.com/ZgOm-Pg/ZLink/conf"
+	vCore "github.com/ZgOm-Pg/ZLink/core"
+	"github.com/ZgOm-Pg/ZLink/limiter"
+	"github.com/ZgOm-Pg/ZLink/node"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )

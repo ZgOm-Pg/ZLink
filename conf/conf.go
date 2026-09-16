@@ -5,7 +5,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/JackHONGhy/ZLink/common/json5"
+	"github.com/ZgOm-Pg/ZLink/common/json5"
 
 	"encoding/json/v2"
 )

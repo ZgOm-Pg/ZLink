@@ -11,8 +11,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/JackHONGhy/ZLink/api/panel"
-	"github.com/JackHONGhy/ZLink/conf"
+	"github.com/ZgOm-Pg/ZLink/api/panel"
+	"github.com/ZgOm-Pg/ZLink/conf"
 	"github.com/apernet/hysteria/core/v2/server"
 	"github.com/apernet/hysteria/extras/v2/correctnet"
 	"github.com/apernet/hysteria/extras/v2/masq"

@@ -20,7 +20,7 @@
 ## 一键安装
 
 ```bash
-wget -N https://raw.githubusercontent.com/JackHONGhy/ZLink/main/install.sh && bash install.sh
+wget -N https://raw.githubusercontent.com/ZgOm-Pg/ZLink/main/install.sh && bash install.sh
 ```
 
 支持的系统：Debian / Ubuntu / CentOS / Rocky / AlmaLinux / Alpine / Fedora 等。
@@ -107,7 +107,7 @@ XrayR 已停止维护，ZLink（V2bX 系）是其继任者，且补齐了在线�
 
 迁移步骤：
 
-1. 安装 ZLink：`wget -N https://raw.githubusercontent.com/JackHONGhy/ZLink/main/install.sh && bash install.sh`
+1. 安装 ZLink：`wget -N https://raw.githubusercontent.com/ZgOm-Pg/ZLink/main/install.sh && bash install.sh`
 2. 按上表填写 `/etc/ZLink/config.json`
 3. `ZLink restart` 并确认面板节点在线
 4. 确认无误后停用 XrayR：`systemctl disable --now XrayR`

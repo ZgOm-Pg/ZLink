@@ -9,8 +9,8 @@ import (
 	"github.com/sagernet/sing-box/include"
 	"github.com/sagernet/sing-box/log"
 
-	"github.com/JackHONGhy/ZLink/conf"
-	vCore "github.com/JackHONGhy/ZLink/core"
+	"github.com/ZgOm-Pg/ZLink/conf"
+	vCore "github.com/ZgOm-Pg/ZLink/core"
 	box "github.com/sagernet/sing-box"
 	"github.com/sagernet/sing-box/adapter"
 	"github.com/sagernet/sing-box/option"

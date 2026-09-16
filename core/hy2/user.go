@@ -4,9 +4,9 @@ import (
 	"net"
 	"sync"
 
-	"github.com/JackHONGhy/ZLink/api/panel"
-	"github.com/JackHONGhy/ZLink/common/counter"
-	vCore "github.com/JackHONGhy/ZLink/core"
+	"github.com/ZgOm-Pg/ZLink/api/panel"
+	"github.com/ZgOm-Pg/ZLink/common/counter"
+	vCore "github.com/ZgOm-Pg/ZLink/core"
 	"github.com/apernet/hysteria/core/v2/server"
 )
 

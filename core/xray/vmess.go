@@ -1,8 +1,8 @@
 package xray
 
 import (
-	"github.com/JackHONGhy/ZLink/api/panel"
-	"github.com/JackHONGhy/ZLink/common/format"
+	"github.com/ZgOm-Pg/ZLink/api/panel"
+	"github.com/ZgOm-Pg/ZLink/common/format"
 	"github.com/xtls/xray-core/common/protocol"
 	"github.com/xtls/xray-core/common/serial"
 	"github.com/xtls/xray-core/infra/conf"

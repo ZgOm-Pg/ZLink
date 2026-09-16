@@ -3,7 +3,7 @@ package limiter
 import (
 	"regexp"
 
-	"github.com/JackHONGhy/ZLink/api/panel"
+	"github.com/ZgOm-Pg/ZLink/api/panel"
 )
 
 func (l *Limiter) CheckDomainRule(destination string) (reject bool) {

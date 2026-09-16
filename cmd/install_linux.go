@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/JackHONGhy/ZLink/common/exec"
+	"github.com/ZgOm-Pg/ZLink/common/exec"
 	"github.com/spf13/cobra"
 )
 
@@ -17,7 +17,7 @@ var (
 		Short: "Update ZLink version",
 		Run: func(_ *cobra.Command, _ []string) {
 			exec.RunCommandStd("bash",
-				"<(curl -Ls https://raw.githubusercontent.com/JackHONGhy/ZLink/main/install.sh)",
+				"<(curl -Ls https://raw.githubusercontent.com/ZgOm-Pg/ZLink/main/install.sh)",
 				targetVersion)
 		},
 		Args: cobra.NoArgs,

@@ -3,7 +3,7 @@ package core
 import (
 	"errors"
 
-	"github.com/JackHONGhy/ZLink/conf"
+	"github.com/ZgOm-Pg/ZLink/conf"
 )
 
 var (

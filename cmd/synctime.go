@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/JackHONGhy/ZLink/common/systime"
+	"github.com/ZgOm-Pg/ZLink/common/systime"
 	"github.com/beevik/ntp"
 	"github.com/spf13/cobra"
 )

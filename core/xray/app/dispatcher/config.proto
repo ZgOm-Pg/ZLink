@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package v2bx.core.app.dispatcher;
 option csharp_namespace = "ZLink.core.app.dispatcher";
-option go_package = "github.com/JackHONGhy/ZLink/core/xray/app/dispatcher";
+option go_package = "github.com/ZgOm-Pg/ZLink/core/xray/app/dispatcher";
 option java_package = "com.v2bx.core.app.dispatcher";
 option java_multiple_files = true;
 

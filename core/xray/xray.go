@@ -7,10 +7,10 @@ import (
 
 	"encoding/json/v2"
 
-	"github.com/JackHONGhy/ZLink/conf"
-	vCore "github.com/JackHONGhy/ZLink/core"
-	"github.com/JackHONGhy/ZLink/core/xray/app/dispatcher"
-	_ "github.com/JackHONGhy/ZLink/core/xray/distro/all"
+	"github.com/ZgOm-Pg/ZLink/conf"
+	vCore "github.com/ZgOm-Pg/ZLink/core"
+	"github.com/ZgOm-Pg/ZLink/core/xray/app/dispatcher"
+	_ "github.com/ZgOm-Pg/ZLink/core/xray/distro/all"
 	log "github.com/sirupsen/logrus"
 	"github.com/xtls/xray-core/app/proxyman"
 	"github.com/xtls/xray-core/app/stats"

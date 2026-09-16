@@ -6,12 +6,12 @@ import (
 	"net"
 	"sync"
 
-	"github.com/JackHONGhy/ZLink/common/format"
-	"github.com/JackHONGhy/ZLink/common/rate"
+	"github.com/ZgOm-Pg/ZLink/common/format"
+	"github.com/ZgOm-Pg/ZLink/common/rate"
 
-	"github.com/JackHONGhy/ZLink/limiter"
+	"github.com/ZgOm-Pg/ZLink/limiter"
 
-	"github.com/JackHONGhy/ZLink/common/counter"
+	"github.com/ZgOm-Pg/ZLink/common/counter"
 	"github.com/sagernet/sing-box/adapter"
 	"github.com/sagernet/sing-box/log"
 	N "github.com/sagernet/sing/common/network"

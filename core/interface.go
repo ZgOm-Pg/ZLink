@@ -1,8 +1,8 @@
 package core
 
 import (
-	"github.com/JackHONGhy/ZLink/api/panel"
-	"github.com/JackHONGhy/ZLink/conf"
+	"github.com/ZgOm-Pg/ZLink/api/panel"
+	"github.com/ZgOm-Pg/ZLink/conf"
 )
 
 type AddUsersParams struct {

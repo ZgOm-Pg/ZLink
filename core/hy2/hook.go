@@ -3,9 +3,9 @@ package hy2
 import (
 	"sync"
 
-	"github.com/JackHONGhy/ZLink/common/counter"
-	"github.com/JackHONGhy/ZLink/common/format"
-	"github.com/JackHONGhy/ZLink/limiter"
+	"github.com/ZgOm-Pg/ZLink/common/counter"
+	"github.com/ZgOm-Pg/ZLink/common/format"
+	"github.com/ZgOm-Pg/ZLink/limiter"
 	"github.com/apernet/hysteria/core/v2/server"
 	"go.uber.org/zap"
 )

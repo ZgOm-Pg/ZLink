@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/JackHONGhy/ZLink/common/exec"
+	"github.com/ZgOm-Pg/ZLink/common/exec"
 )
 
 const (

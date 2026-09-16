@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/JackHONGhy/ZLink/common/exec"
+	"github.com/ZgOm-Pg/ZLink/common/exec"
 	"github.com/spf13/cobra"
 )
 

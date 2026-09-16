@@ -9,7 +9,7 @@ import (
 
 	"encoding/json"
 
-	"github.com/JackHONGhy/ZLink/common/json5"
+	"github.com/ZgOm-Pg/ZLink/common/json5"
 )
 
 type NodeConfig struct {

@@ -4,7 +4,7 @@ import (
 	"log"
 	"testing"
 
-	"github.com/JackHONGhy/ZLink/conf"
+	"github.com/ZgOm-Pg/ZLink/conf"
 )
 
 var client *Client

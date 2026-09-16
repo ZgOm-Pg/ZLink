@@ -1,8 +1,8 @@
 package hy2
 
 import (
-	"github.com/JackHONGhy/ZLink/conf"
-	vCore "github.com/JackHONGhy/ZLink/core"
+	"github.com/ZgOm-Pg/ZLink/conf"
+	vCore "github.com/ZgOm-Pg/ZLink/core"
 	"go.uber.org/zap"
 )
 

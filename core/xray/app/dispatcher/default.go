@@ -10,9 +10,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/JackHONGhy/ZLink/common/counter"
-	"github.com/JackHONGhy/ZLink/common/rate"
-	"github.com/JackHONGhy/ZLink/limiter"
+	"github.com/ZgOm-Pg/ZLink/common/counter"
+	"github.com/ZgOm-Pg/ZLink/common/rate"
+	"github.com/ZgOm-Pg/ZLink/limiter"
 
 	"github.com/xtls/xray-core/app/dispatcher"
 	"github.com/xtls/xray-core/common"

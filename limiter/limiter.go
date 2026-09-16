@@ -7,9 +7,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/JackHONGhy/ZLink/api/panel"
-	"github.com/JackHONGhy/ZLink/common/format"
-	"github.com/JackHONGhy/ZLink/conf"
+	"github.com/ZgOm-Pg/ZLink/api/panel"
+	"github.com/ZgOm-Pg/ZLink/common/format"
+	"github.com/ZgOm-Pg/ZLink/conf"
 	"github.com/juju/ratelimit"
 )
 

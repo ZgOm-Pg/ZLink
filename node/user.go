@@ -3,7 +3,7 @@ package node
 import (
 	"strconv"
 
-	"github.com/JackHONGhy/ZLink/api/panel"
+	"github.com/ZgOm-Pg/ZLink/api/panel"
 	log "github.com/sirupsen/logrus"
 )
 

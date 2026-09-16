@@ -96,7 +96,7 @@ before_show_menu() {
 }
 
 install() {
-    bash <(curl -Ls https://raw.githubusercontent.com/JackHONGhy/ZLink/main/install.sh)
+    bash <(curl -Ls https://raw.githubusercontent.com/ZgOm-Pg/ZLink/main/install.sh)
     if [[ $? == 0 ]]; then
         if [[ $# == 0 ]]; then
             start
@@ -112,7 +112,7 @@ update() {
     else
         version=$2
     fi
-    bash <(curl -Ls https://raw.githubusercontent.com/JackHONGhy/ZLink/main/install.sh) $version
+    bash <(curl -Ls https://raw.githubusercontent.com/ZgOm-Pg/ZLink/main/install.sh) $version
     if [[ $? == 0 ]]; then
         echo -e "${green}更新完成，已自动重启 ZLink，请使用 ZLink log 查看运行日志${plain}"
         exit
@@ -300,7 +300,7 @@ install_bbr() {
 }
 
 update_shell() {
-    wget -O /usr/bin/ZLink -N --no-check-certificate https://raw.githubusercontent.com/JackHONGhy/ZLink/main/ZLink.sh
+    wget -O /usr/bin/ZLink -N --no-check-certificate https://raw.githubusercontent.com/ZgOm-Pg/ZLink/main/ZLink.sh
     if [[ $? != 0 ]]; then
         echo ""
         echo -e "${red}下载脚本失败，请检查本机能否连接 Github${plain}"
@@ -962,7 +962,7 @@ show_usage() {
 show_menu() {
     echo -e "
   ${green}ZLink 后端管理脚本，${plain}${red}不适用于docker${plain}
---- https://github.com/JackHONGhy/ZLink ---
+--- https://github.com/ZgOm-Pg/ZLink ---
   ${green}0.${plain} 修改配置
 ————————————————
   ${green}1.${plain} 安装 ZLink
